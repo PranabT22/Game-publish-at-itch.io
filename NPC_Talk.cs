@@ -17,6 +17,7 @@ public class NPC_Talk : MonoBehaviour
     private void OnEnable()
     {
         rb.velocity = Vector2.zero;
+        rb.isKinematic = true;
         anim.Play("Idle");
         interactAnim.Play("Open");
     }
@@ -24,5 +25,6 @@ public class NPC_Talk : MonoBehaviour
     private void OnDisable()
     {
         interactAnim.Play("Close");
+        rb.isKinematic = false;
     }
 }
